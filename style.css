@@ -1,0 +1,80 @@
+
+body {
+  background: #171516;
+  overflow: hidden;
+}
+
+.container {
+  top: 51%;
+  position: absolute;
+  transform: translateY(-50%);
+}
+
+.row {
+  display: block;
+  width: 100vw;
+  height: 120px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: -35px;
+  margin-left: -33px;
+
+}
+.hexagon {
+    border-radius: ;
+    position: relative;
+    width: 100px;
+    height: 54.74px;
+/*     padding: 5px; */
+    background-color: #3d3d3d;
+    margin: 32.87px 2px;
+    display: block;
+    transition: all 0.2s linear;
+  }
+.hexagon::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  top: 100%;
+  width: 0;
+  border-top: 28.87px solid #3d3d3d;
+  transition: all 0.2s linear;
+ }
+.hexagon::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  bottom: 100%;
+  border-bottom: 28.87px solid #3d3d3d;
+  transition: all 0.2s linear;
+}
+.row-moved {
+  margin-left: 19px;
+ }
+
+.light {
+  background: #3fff3c !important;
+  animation: colorgen 1s infinite;
+}
+.light::before {
+  border-bottom: 28.87px solid #3fff3c !important;
+ }
+.light::after {
+  border-top: 28.87px solid #3fff3c !important;
+ }
+
+@keyframes colorgen {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(270deg);
+  }
+}
